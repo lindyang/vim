@@ -1,0 +1,70 @@
+ctrl-w w; ctrl-w ctrl-w
+:close
+:only
+:new
+:[num]split file
+{height}ctrl-w _
+ctrl-w _ make a window as high as it can
+--option--
+winheight winminheight
+winwidth winminwidth
+equalalways
+:vnew :vertical new
+":vertical"
+ctrl-w [H|J|K|L]
+ctrl-w [R|r]
+:qall[!] :wall :wqall
+vim -o one.txt two.txt three.txt
+vim -O one.txt two.txt three.txt
+:all :vertical all
+zo zc
+:edit main.c :vertical diffsplit main.c~
+:edit main.c :vertical diffpatch main.c.diff
+:set noscrollbind
+{num}]c {num}[c
+:diffupdate :dp :do :dgg
+laststatus(option) 0 1 2
+:tag jumps to a tag
+:stag splits the window and jumps to a tag
+ctrl-w ctrl-^
+splitbelow
+splitright
+:leftabove aboveleft
+:rightbelow :belowright
+:topleft :botright
+:tabedit file
+gt(goto tab)
+:tab split
+":tab" before any Ex command that opens a window
+:tabonly
+:tab help gt
+vim -p filename ...
+:[count]tabe[dit] [++opt] [+cmd] {file}
+:[count]tabnew [++opt] [+cmd] {file}
+:tabnew :.tabnew :+tabnew :-tabnew :0tabnew :$tabnew
+:[count]tabf[ind] [++opt] [+cmd] {file}
+:[count]tab {cmd}
+:tab split; :tab help gt
+CTRL-W gf open new tab, edit filename under the cursor
+CTRL-W gF open new tab, edit filename under the cursor, jump to line following the filename
+:tabc[lose][!]
+:{count}tabc[lose][!]
+:tabc[lose][!] {count}
+:-tabclose :+tabclose :1tabclose :$tabclose
+:tabo[nly][!]
+:{count}tabo[nly][!]
+:[.]tabo :-tabo :+tabo :1tabo :$tabo
+:tabn[ext] {count}; {count}gt
+:tabp[revious](tabN[ext]); gT
+:tabr[ewind]; tabfir[st]; tabl[ast]
+:tabs ">" current window; "+" mofified buffers
+:tabm[ove] [N]
+:[N]tabm[ove]
+:.tabm :-tabm :+tabm :0tabm :tabm 0 :tabm(last) :$tabm :tabm $
+:tabm[ove] +[N]
+:tabm[ove] -[N]
+:Ntabm vs :+N tabm
+:[range]tabd[o] {cmd}
+tabline(option)
+showtabline(option)
+hl-TabLine hl-TabLineSel hl-TabLineFill

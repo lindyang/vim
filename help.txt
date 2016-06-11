@@ -1,0 +1,14 @@
+/|.*|
+/\*.*\*
+Ctrl-]
+Ctrl-T/Ctrl-O to
+8个help状态
+Normal mode command x
+Visual mode command v_
+Insert mode command i_
+Command line command :
+Command line editing c_
+Vim command argumena -t
+Option ''
+Regular expression /
+:help word -> ctrl-D, :helpgrep word

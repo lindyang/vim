@@ -1,0 +1,6 @@
+echo /father/son/file.txt
+echo !$:h
+echo !-2:t
+echo !-3:r
+echo !-4:e
+echo !-5:p

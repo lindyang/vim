@@ -1,0 +1,16 @@
+<C-R>=
+:pu! n "nP
+:p n "np
+:y :d :pu
+
+m 创建标记
+' 移动到标记行首
+` 移动到标记光标位置
+:marks
+:delmarks
+:delmarks!
+
+ma
+:'a delete reg
+:'a yank reg
+:edit filename :files :buffer num

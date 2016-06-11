@@ -1,0 +1,17 @@
+vim *.cpp
+qq
+:%s/a/b/ge(e not finding a match is not an error)
+:wnext
+q
+@q
+999@q
+"\0" stands for the whole matched
+:g/^/m 0
+:'t+1,.g/^/m 't
+gctrl-g
+:runtime! ftplugin/man.vim
+:Man csh
+\K
+:%s/\s\+$//
+:grep error_string *.c
+:cnext :cprev :clist

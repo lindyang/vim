@@ -1,0 +1,39 @@
+b backward to the start of the previous word
+e next end of a word
+ge previous end of a word
+<- b...ge  -> w...e
+*iskeyword*
+2$
+
+; repeat , other direction
+cursor is not on a useful character, "%" will search forward to find one.
+7G, 7gg move to line 7
+40%
+H stands for Home, M for Middle, L for Last
+zt at the top
+zz middle
+zb bottom
+.*[]^%/\?~$
+/o<ctrp-p> <ctrl-n>
+:history
+3*, 3# search third occurrence of the word under the cursor
+/\<the\>
+g*, g#
+:nohls
+nowrapscan
+========== move the cursor further than within the same line,[Jump] ==========
+G gg / n
+!fx tx j k
+`` go back where you came from with column, back and forth
+'' go back without column, back and forth
+CTRL-O jumps to older positions (O for older)
+CTRL-I jumps back to newer positions (I next to O), same as Tab
+:jumps
+ma/'a/`a
+:marks
+' The cursor position before doing a jump
+" The cursor position when last editing the file
+[ Start of the last change
+] End of the last change
+
+

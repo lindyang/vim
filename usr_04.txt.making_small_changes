@@ -1,0 +1,45 @@
+"d" can followed by any motion
+w 包含空格
+e不包含空格
+ld
+dd delete whole line
+cc change whole line, keep existing indent
+cw exception ce
+Another  is "c", jfjajfj.  It jafjafj "d" operator, except
+it leaves you in Insert mode.  For example, "cw" changes a word.  Or more
+specifically, it deletes a word and then puts you in Insert mode.
+S=cc
+s=cl
+5rx
+4r<Enter> replace four character with one line break
+"." works except "u" "redo" and :
+selected some text in Visual mode, and need other end of the selected, "o" (Hint: o for other end)
+Visual mode "v"
+Selecting Lines "V"
+Selecting Blocks "Ctrl-v"
+blockwise selection, you have four corners,
+"o" 对角, Use "O" to move to the other corner in the same line
+dwelp
+[count]p
+"yw" includes the white space after a word,
+"ye"
+Y=yy
+"*yy to clipboard
+"*p
+daw (Hint: "aw" stands for "A Word")
+operator-motion
+Visual mode
+operator-text object
+"cis" change a whole sentence
+"is" Inner Sentence
+"as" a sentence
+"as" include the white space after the sentence
+"vis", "vas"
+"R" extends the line
+Insert and Replace mode
+<BS> (backspace)
+diw/daw
+dG/dgg
+c change, y yank
+~ change case, not an operator(unless 'tildeop' set)
+I/A

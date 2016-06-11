@@ -1,0 +1,8 @@
+ctrl-b(begin) ctrl-e(end)
+ctrl-c
+:set is ctrl-d(list matches)
+ctrl-l(complete the longest unambiguous string)
+:history(:)
+:history /(search)
+q:(small window at the bottom)
+?config

@@ -1,0 +1,37 @@
+$MYVIMRC
+gu{motion}
+gU{motion}
+g~{motion}
+:version
+$VIMRUNTIME/vimrc_example.vim
+set backspace=indent,eol,start
+in insert mode the <BS> is to delete the character in front the cursor.
+delete white space at the start of the line, a line break and the character
+before where insert mode started.
+set ruler 标尺
+set showcmd 在命令行模式下看你输入了什么命令(右下角)
+set showmode 在什么模式下
+gq formatting
+map Q gq
+vnoremap _g y:exe "grep /" . escape(@", '\\/') . "/ *.c *.h"<CR>
+filetype plugin indent on
+    detive filetype.
+        syntax highlighting and the other two items
+    using filetype plugin fles
+autocmd FileType text setlocal textwidth=78
+1. global plugin (Vim script instead of being compiled into vim)
+2. filetype plugin
+
+$VIMRUNTIME/macros global
+$VIMRUNTIME/ftplugin filetype
+options
+help local-addition
+help 'wrap'
+set sidescroll=10
+set whichwrp=b,s
+set whichwrap=b,s,<,>
+set listchars=tab:>-,trail:-
+i Ctrl-V Tab
+set iskeyword=@,48-57,_,192-255
+@ is alphabetic letters
+set cmdheight=3

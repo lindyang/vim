@@ -1,0 +1,9 @@
+vim -r help.txt
+:write help.txt.recovered
+:edit #
+:diffsp help.txt
+'updatetime' 'updatecount'
+vim -r ""
+vim -r
+:recover
+add "A" to the 'shortmess'

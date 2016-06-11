@@ -1,0 +1,17 @@
+set showmode
+3a!<Esc>, 3x
+:e! reloads the original version of the file
+CTRL-T (pop tag), CTRL-O (jump to older position)
+If you see an error message that you don't understand, for example
+    E37: No write since last change (use ! to override)
+:help E37
+:help CTRL-B
+:help subject()
+:help +subject Compile-time feature "+subject"
+:help usr_toc.txt
+:help pattern<Tab>
+:help pattern<Ctrl-D>
+:helpgrep pattern
+ cn cN cprev cfirst clast copen cclose (quickfix)
+ vim a b c
+ :bp :bn :first :last :b num

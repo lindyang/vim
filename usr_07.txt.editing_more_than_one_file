@@ -1,0 +1,21 @@
+:[hide]edit[!] foo.txt close current and open new one
+:[w]next[!]
+:args(arguments)
+:first :last :[w]previous[!] :[num]next
+:set autowrite
+:set noautowrite
+:args five.c six.c seven.c
+:args *.txt
+ctrl-^ swith between two file
+'" leave position
+'. made last change
+:set backup
+:set backupext=.bak
+:set nobackup :set writebackup delete backup when file was completed successfully
+:set patchmode=.orig
+3Y yank 3 lines
+:write >> logfile
+vim -R file view file
+vim -M file :set modifiable :set write
+:saveas move.c
+:file move.c

@@ -1,0 +1,22 @@
+ctrl_w + R rotate left/right
+ctrl_w + r rotate up/down
+syntax enable
+if &t_Co > 1
+    syntax enable
+endif
+setenv TERM xterm-color|TERM=xterm-color; export TERM
+set filetype
+$VIMRUNTIME/syntax
+put start or end of the file
+# vim: syntax=python
+:set background=[dark|light] before :syntax enable
+:syntax reset
+:colorscheme evening :colorscheme default
+$VIMRUNTIME/color
+:runtime syntax/colortest.vim
+:syntax clear
+:syntax off
+:syntax manual :set syntax=ON
+new-filetype
+:TOhtml :source $VIMRUNTIME/syntax/2html.vim
+

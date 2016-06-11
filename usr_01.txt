@@ -1,0 +1,5 @@
+set conceallevel=0
+set HelpBar Normal
+set HelpStar Normal
+cp -i $VIMRUNTIME
+scriptnames

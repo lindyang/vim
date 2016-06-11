@@ -1,0 +1,40 @@
+@q @@
+"." can only repeat the last one change of @q
+G
+o<Esc>
+"np
+{edits}
+o
+"ny$
+dd
+write to an uppercase register name means to append to the register with the same letter
+"aY->"AY
+:[range]substitute/from/to/[flags]
+flags:
+g, p, c
+:.write otherfile
+.,$; 1,$= %
+:?^Chapter?,/^Chapter/s=grey=gray=g
+/Chapter/-1
+/Chapter/+2
+:.+3,$-5
+:'t,'b
+:'<,'>
+:'>,$
+:.,.+4
+:[range]global/{pattern}/{command}
+:g+//+s/this/that/g
+joinspaces(option)
+gJ(don't want the white space to be changed)
+:$r patch; :0read patch
+:.write collection
+:.write >> collection
+:set textwidth=72
+gqap "gq" "ap"(a paragraph)
+gggqG
+gugu guu
+"!{motion}{program}
+!5Gsort<Enter>
+!!date<Enter> (!! current line)
+"!!date" replaced a line; ":0read !date" insert a line
+ctrl-L

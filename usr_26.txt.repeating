@@ -1,0 +1,23 @@
+gv
+ctrl-a
+:set nrformats-=octal
+ctrl-x
+:args *.c
+:argdo %s/\<x_cnt\>/x_counter/ge | update
+:windo
+:bufdo
+
+%s/-person-/Jones/g
+write tempfile
+quit
+
+for file in *.txt; do
+    vim -e -s $file < change.vim
+    lpr -r tempfile
+done
+
+ls | vim -
+producer | vim -S change.vim -
+
+vim -s script file.txt
+vim -{w|W} script file.txt

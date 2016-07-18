@@ -1,0 +1,14 @@
+:set ignorecase smartcase
+\Cword word
+\CWord Word
+\cWord word, Word, WORD
+:set ruler 101,29 84%
+:set nowrapscan
+/default/2
+/const/e
+/const/e+1
+/const/e-1
+/const/b+2
+//that //e(/that/e)
+/, //
+?const?e-2

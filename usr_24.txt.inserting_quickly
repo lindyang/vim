@@ -1,0 +1,44 @@
+ctrl-w
+ctrl-u
+set showmatch
+set matchtime=15
+1. Current file
+2. Files in other windows
+3. Other loaded files (hidden buffers)
+4. Files which are not loaded (inactive buffers)
+5. Tag files
+6. All files #included by the current file
+'complete' order
+'ignorecase'
+'infercase'
+ctrl-x ctrl-f   file names
+ctrl-x ctrl-l   whole lines
+ctrl-x ctrl-d   macro definitions (alse in include files)
+ctrl-x ctrl-i   current and included files
+ctrl-x ctrl-k   words from a dictionary
+ctrl-x ctrl-T   words from a thesaurus
+ctrl-x ctrl-]   tags
+ctrl-x ctrl-v   vim command line
+filetype plugin on|filetype plugin indent on, ctrl-x ctrl-o
+ctrl-a
+ctrl-y
+ctrl-e
+[ctrl-r]ctrl-r {register}
+iabbrev ad advertisement
+abbrev 
+abbrevate
+i insert
+c command
+! both
+
+:unabbreviate 
+:abclear
+:abbreviate @a adder
+:imap dd disk-door
+:noreabbrev @a adder
+ctrl-v
+ctrl-v 127
+:digraphs
+ctrl-o D
+ctrl-o "g3dw
+

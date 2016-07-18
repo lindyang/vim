@@ -1,0 +1,28 @@
+edit .
+:Explore
+CTRL-O
+"-"(one level higher)
+:NetrwSettings
+:Explore ftp://somehost/path/to/dir/
+:e scp://somehost/path/to/dir
+:pwd
+:cd VeryLongFileName
+:edit ..
+:edit ..t
+:lcd(local cd)
+:gf
+:set path+=./proto(below the directory where the file in which you use "gf")
+:find inits.h
+CTRL-W f(gf) :sfind
+vim "+find stdio.h"
+
+edit one.txt(not save)->edit two.txt->:hide edit two.txt(creating a hidden buffer)
+:hide('hidden' option was set)
+:buffers :ls
+u % # a h = - +
+:buffer 2
+:buffer part-of-name
+:sbuffer
+:bnext :bprevious :bfirst :blast :bdelete
+:bdelete(unlisted) :buffers!
+:bwipe

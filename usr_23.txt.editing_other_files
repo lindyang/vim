@@ -1,0 +1,26 @@
+unix LF
+apple CR
+:edit ++ff=unix file.txt
+++ff ++enc
+:set fileformat=unix
+:write
+gf CTRL-W f
+netrw
+vim -x exam.txt
+:set key=
+:X
+Enter encryption key: *****
+Enter same key again: *****
+vim -x -n file.txt
+:setlocal noswapfile
+vim -b datafile(textwidth is set to zero, unix file format)
+:set display=uhex
+"ga"
+:set nowrap
+g CTRL-G
+2345go
+vim -b datafile
+:%!xxd
+:%!xxd -r
+changes in the hex part are used
+Compressed files

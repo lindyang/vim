@@ -1,0 +1,31 @@
+set textwidth=30
+'wrap' display lines with a line break, but doesn't insert a line break
+gq
+1. Visual mode
+2. movement
+3. text object
+gq}
+gqap ("ap" stands for "a-paragraph")
+'joinspaces'
+
+:{range}center [width]
+:{range}center [margin]
+:runtime macros/justify.vim
+4>>
+>4j
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set tabstop=3
+:retab 8
+:set linebreak
+'breakat'
+'showbreak'
+'textwidth'
+:map <Up> gk
+:map <Down> gj
+:g/./,/^$/join
+:g/\S/,/^\s*$/join
+:set virtualedit=all
+gr/gR

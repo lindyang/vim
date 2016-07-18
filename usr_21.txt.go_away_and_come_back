@@ -1,0 +1,60 @@
+:suspend
+:!{program}
+:r !{program}
+:w !{program}
+:[range]!{program}
+CTRL-Z(old shell); :shell(new shell)
+:!xterm&
+command-line and search pattern history
+text in reg
+marks for various files
+the buffer list
+global variables
+:set viminfo=string
+:set viminfo='1000(marks)
+:set viminfo='1000, f1(f global marks)
+:set viminfo=<500(reg)
+: (command line)
+@ (input line)
+/ (search)
+r (removable media)
+! (global variables with uppercase)
+h (disable hlsearch)
+% (buffer list)
+c (convert using 'encoding')
+n (name used for the viminfo file)
+'0
+:oldfiles
+:e #<2
+%(current file name) #(alternate file name)
+:browse oldfiles q :num
+:wviminfo!! /tmp/viminfo
+:rviminfo1! /tmp/viminfo
+(without ! and /tmp/viminfo exists, merge into the file)
+(without ! only information that wasn't set is used)
+==sessions==
+file list
+window layout
+global variables
+options
+...
+:mksession vimbook.vim
+:source vimbook.vim
+vim -S vimbook.vim(session source)
+sessionoptions="blank,buffers,curdir,folds,help,options,winsize"
+blank keep empty windows
+buffers all buffers, not only the ones in a window
+curdir the curret directory
+folds folds, also manually created ones
+help the help window
+options all options and mappings
+winsize window sizes
+==working on diffrent projects==
+:wall
+:mksession! ~/.vim/secret.vim
+:source ~/.vim/boring.vim
+:help
+CTRL-W w
+:vertical split ~/
+:mksession ~/.vim/mine.vim
+"o" (open file)

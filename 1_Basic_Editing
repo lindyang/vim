@@ -1,0 +1,32 @@
+set cp/compatible
+set nocp/nocompatible
+
+ctrl-] jump to tag
+ctrl-t pop tag
+
+ctrl-a/x
+
+help i_ctrl-h
+help -t
+help 'number'
+
+help :quit
+help 'nowrap'
+help <up>
+
+Normal-mode commands
+Control Character
+Visual-mode commands
+Insert-mode commands
+ex-mode commands
+Commands-line edit
+Vim command arguments
+Options
+
+help helplang=ch,en
+Vim always searchs English as a last resort
+
+3a!<Esc> = !!!
+
+vimtutor for Unix
+help tutor

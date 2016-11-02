@@ -1,0 +1,16 @@
+num$
+numG
+num%
+col 2-9
+ctrl-u 向前翻页
+ctrl-d 向后翻页
+dmotion
+cc/C/c$/c0/c^
+5ra replace the first five character witha
+2r<Enter>
+5~
+q{character}q
+@{character}
+2@i
+digraphs
+ctrl-k12½

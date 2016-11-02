@@ -1,0 +1,6 @@
+:map <F2> GoDate: <Esc>:read !date<CR>kJ
+:map <F2> a<C-R>=strftime("%c")<CR><Esc>
+foo bar 
+<buffer> <nowait> <silent> <special> <script> <expr>
+:omap <F7> a{
+jjjj

@@ -1,0 +1,41 @@
+marks
+' The last place the cursor was at
+" The position of the cursor when we last left this buffer.
+[ The start of the last insert
+] The end of the insert
+
+marks args
+y{motion}
+Y yank the whole line
+sort < input.txt > output.txt
+
+visual ! command takes a block of text and filters it through another program.
+!!ls (get the output of system commands into a file)
+
+e(dit)[!] file (close the current file and opens the new one)
+
+To edit a new, unamed buffer use the enew(ene) command. It works just like edit only the new buffer is unnamed.
+
+view file
+
+wn(ext)
+{num}next[!]
+
+set autowrite
+autowrite only works for the current file. To work on all file, you need the autowriteall option
+
+which file am I on: args
+
+previous/prev
+next/n
+first/rewind rew/fir
+last/la
+
+[count]ctrl-^ # the alternate file
+
+match Error /TODO/ highlight all the word "TODO"
+To find out what highlight names
+highlight
+match none
+match 2match 3match
+some text is matched by more than one command, the lowest one wins

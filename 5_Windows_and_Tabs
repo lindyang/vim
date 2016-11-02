@@ -1,0 +1,20 @@
+close
+vsplit(vs)
+execute an initial command using the +command convention
+{lines} split +/printf three.c
+ctrl-wn :new
+Split Summary
+count split +command file
+new opens a window containing a new, empty file.
+vnew/new
+sview/sv split and view
+:vertical :sview(:vert :sview)
+
+count ctrl-w+
+count ctrl-w-
+ctrl-w=
+count ctrl-w_ makes the current widow lines high.
+If no count is specified, the window is increased to its maximum size
+
+:resize [+|-]lines
+if no argument is given to maximum hight

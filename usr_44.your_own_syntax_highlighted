@@ -1,0 +1,35 @@
+:syntax clear
+:syntax
+:syntax list {name}
+:syntax case {match|ignore}
+
+:syntax keyword {group} {keyword} ...
+:syntax keyword xType int long char
+:syntax keyword xStatement if then else endif
+:highlight assign colors to a {group}
+
+{group} named protocol cshType, cType
+:highlight link xType Type
+:highlight link xStatement Statement
+
+:setlocal iskeyword+=-
+:syntax keyword xStatement when-not
+:syntax keyword xStatement n[ext]
+:syntax match xIdentifier /\<\l\+\>/
+:syntax match xComment /#.*/
+:syntax region xString start=/"/ end=/"/
+:syntax region xString start=/"/ skip=/\\"/ end=/"/
+:syntax keyword xTodo TODO contained
+:syntax match xComment /%.*/ contains=xTodo
+:syntax region xBlock start=/{/ end=/}/ contains=xBlock
+:syntax region xComment start=/%/ end=/$/ contained
+:syntax region xPreProc start=/#/ end=/$/ contains=xComment keepend
+:syntax region xList start=/\[/ end=/\]/ contains=ALL
+:syntax region xList start=/\[/ end=/\]/ contains=ALLBUT,xString
+:syntax match xIf /if/ nextgroup=xIfCondition skipwhite
+:syntax match xIfCondition /([^)]*)/ contained nextgroup=xThen skipwhite
+:syntax match xThen /then/ contained
+:syntax region xInside start=/(/ end=/)/
+:syntax region xInside matchgroup=xParen start=/(/ end=/)/
+:syntax region xInside matchgroup=xParen start=/(/ matchgroup=xParenEnd end=/)/
+TRANSPARENT

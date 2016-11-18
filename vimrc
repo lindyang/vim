@@ -1,6 +1,7 @@
 " Basic --- {{{
 augroup basic_settings
     autocmd!
+    syntax on
     set modelines=10
     set number
     set softtabstop=4
@@ -10,7 +11,7 @@ augroup basic_settings
     inoremap jk <esc>
     inoremap <esc> <nop>
 
-    function MyTabLine()
+    function! MyTabLine()
         let s = '' " complete tabline goes here
         " loop through each tab page
         for t in range(tabpagenr('$'))
@@ -76,7 +77,7 @@ augroup basic_settings
         return s
     endfunction
 
-    function MyTabLabel(n)
+    function! MyTabLabel(n)
         let buflist = tabpagebuflist(a:n)
         let winnr = tabpagewinnr(a:n)
         return buflist[winnr - 1] . ') ' . bufname(buflist[winnr - 1])
@@ -105,6 +106,18 @@ augroup alt_maps
         inoremap ß <esc>:write<cr>a
         " alt t
         inoremap † <esc>gUawA
+
+        inoremap ¡ :tabnext 1<cr>
+        inoremap ™ :tabnext 2<cr>
+        inoremap £ :tabnext 3<cr>
+        inoremap ¢ :tabnext 4<cr>
+        inoremap ∞ :tabnext 5<cr>
+        
+        nnoremap ¡ :tabnext 1<cr>
+        nnoremap ™ :tabnext 2<cr>
+        nnoremap £ :tabnext 3<cr>
+        nnoremap ¢ :tabnext 4<cr>
+        nnoremap ∞ :tabnext 5<cr>
     elseif has('unix')
         nnoremap q :quit!<cr>
         inoremap w <esc>:write<cr>:quit<cr>
@@ -148,4 +161,12 @@ augroup END
 " Filetype  --- {{{
 augroup filetype
     autocmd!
-    "autocmd FileType *.c nnoremap <buffer> <localleader>c I//<esc>``i
+    autocmd BufNewFile, BufRead *.html setlocal nowrap
+    autocmd BufNewFile, BufRead *.html gg=G
+    autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+    autocmd FileType *.c nnoremap <buffer> <localleader>c I//<esc>``i
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+    autocmd FileType python :iabbrev <buffer> pr print()<left>
+    autocmd FileType python :iabbrev <buffer> return NOPENOPENOPE
+augroup END
+" }}}

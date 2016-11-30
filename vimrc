@@ -1,6 +1,12 @@
 " Basic --- {{{
 augroup basic_settings
     autocmd!
+    set ruler
+    set statusline=%F   " file path
+    set statusline+=%=  " to right
+    set statusline+=%l  " current line
+    set statusline+=/   " seperator
+    set statusline+=%L    " total lines
     syntax on
     set modelines=10
     set number
@@ -107,11 +113,11 @@ augroup alt_maps
         " alt t
         inoremap † <esc>gUawA
 
-        inoremap ¡ :tabnext 1<cr>
-        inoremap ™ :tabnext 2<cr>
-        inoremap £ :tabnext 3<cr>
-        inoremap ¢ :tabnext 4<cr>
-        inoremap ∞ :tabnext 5<cr>
+        inoremap ¡ <esc>:tabnext 1<cr>
+        inoremap ™ <esc>:tabnext 2<cr>
+        inoremap £ <esc>:tabnext 3<cr>
+        inoremap ¢ <esc>:tabnext 4<cr>
+        inoremap ∞ <esc>:tabnext 5<cr>
         
         nnoremap ¡ :tabnext 1<cr>
         nnoremap ™ :tabnext 2<cr>
@@ -124,16 +130,16 @@ augroup alt_maps
         inoremap s <esc>:write<cr>a
         inoremap t <esc>gUawA
 
-        nnoremap 1 :tabnext 1<cr>
-        nnoremap 2 :tabnext 2<cr>
-        nnoremap 3 :tabnext 3<cr>
-        nnoremap 4 :tabnext 4<cr>
-        nnoremap 5 :tabnext 5<cr>
-        inoremap 1 :tabnext 1<cr>
-        inoremap 2 :tabnext 2<cr>
-        inoremap 3 :tabnext 3<cr>
-        inoremap 4 :tabnext 4<cr>
-        inoremap 5 :tabnext 5<cr>
+        inoremap 1 <esc>:tabnext 1<cr>
+        inoremap 2 <esc>:tabnext 2<cr>
+        inoremap 3 <esc>:tabnext 3<cr>
+        inoremap 4 <esc>:tabnext 4<cr>
+        inoremap 5 <esc>:tabnext 5<cr>
+        nnoremap 1:tabnext 1<cr>
+        nnoremap 2:tabnext 2<cr>
+        nnoremap 3:tabnext 3<cr>
+        nnoremap 4:tabnext 4<cr>
+        nnoremap 5:tabnext 5<cr>
     endif
 augroup END
 " }}}
@@ -141,7 +147,7 @@ augroup END
 " Vimscript file settings --- {{{
 augroup filetype_vim
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker list
+    autocmd FileType vim setlocal foldmethod=marker list audoindent
 augroup END
 " }}}
 
@@ -155,6 +161,10 @@ augroup vimrc
     nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
     nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
     vnoremap <leader>" <esc><esc>`<i"<esc>`>a"<esc>l
+    nnoremap <localleader>w :match Error /\v +$/<cr>
+    nnoremap <localleader>W :match Error /\v +$/<cr>
+    nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+    " nnoremap <localleader>g :execute "grep -R '<cword>' ."<cr>
 augroup END
 " }}}
 
@@ -168,5 +178,17 @@ augroup filetype
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
     autocmd FileType python :iabbrev <buffer> pr print()<left>
     autocmd FileType python :iabbrev <buffer> return NOPENOPENOPE
+    autocmd FileType python inoremap <buffer> <localleader>c <esc>mLI# <esc>`L2la
+    autocmd FileType python nnoremap <buffer> <localleader>c mLI# <esc>`L2l
+    autocmd FileType lua setlocal autoindent
+augroup END
+" }}}
+
+" Operator Pending --- {{{
+augroup operator_pending
+    autocmd!
+    onoremap np :<c-u>normal! /(<cr><esc>vi(<cr>
+    onoremap lp :<c-u>execute "normal! ?)\<cr>vi)\<cr>"
+    onoremap <silent> F :<c-u>normal! 0f(hviw<cr>
 augroup END
 " }}}

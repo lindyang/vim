@@ -1,15 +1,20 @@
 " Basic {{{
 syntax on
-let mapleader = " "
-let maplocalleader = " "
 set modelines=10
-set number
 set softtabstop=4
 set shiftwidth=4
-set rnu
 set expandtab
+set number
+set relativenumber
+let mapleader = " "
+let maplocalleader = " "
 inoremap jk <esc>
 inoremap <esc> <nop>
+nnoremap <localleader>nr :setlocal number! relativenumber!<cr>
+nnoremap <localleader>rn :setlocal relativenumber! number!<cr>
+nnoremap <localleader>p :setlocal paste!<cr>
+nnoremap <localleader>h :setlocal hlsearch!<cr>
+nnoremap <localleader>l :setlocal list!<cr>
 let g:quickfix_is_open = 0
 set tabline=%!MyTabLine()
 " }}}
@@ -71,8 +76,6 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 vnoremap <leader>" <esc><esc>`<i"<esc>`>a"<esc>l
 nnoremap <leader>q :call QuickfixToggle()<cr>
-nnoremap <localleader>l :setlocal list!<cr>
-nnoremap <localleader>h :setlocal hlsearch!<cr>
 " }}}
 
 

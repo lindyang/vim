@@ -1,16 +1,21 @@
 " Basic {{{
 syntax on
-let mapleader = " "
-let maplocalleader = " "
 set modelines=10
-set number
 set softtabstop=4
 set shiftwidth=4
-set rnu
 set expandtab
 set encoding=utf-8
+set number
+set relativenumber
+let mapleader = " "
+let maplocalleader = " "
 inoremap jk <esc>
 inoremap <esc> <nop>
+nnoremap <localleader>nr :setlocal number! relativenumber!<cr>
+nnoremap <localleader>rn :setlocal relativenumber! number!<cr>
+nnoremap <localleader>p :setlocal paste!<cr>
+nnoremap <localleader>h :setlocal hlsearch!<cr>
+nnoremap <localleader>l :setlocal list!<cr>
 let g:quickfix_is_open = 0
 set tabline=%!MyTabLine()
 " }}}
@@ -27,8 +32,10 @@ if has('macunix')
     nnoremap œ :quit!<cr>
     " alt w
     inoremap ∑ <esc>:write<cr>:quit<cr>
+    nnoremap ∑ :write<cr>:quit<cr>
     " alt s
     inoremap ß <esc>:write<cr>a
+    nnoremap ß :write<cr>
     " alt t
     inoremap † <esc>gUawA
 
@@ -70,15 +77,13 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 vnoremap <leader>" <esc><esc>`<i"<esc>`>a"<esc>l
 nnoremap <leader>q :call QuickfixToggle()<cr>
-nnoremap <localleader>l :setlocal list!<cr>
-nnoremap <localleader>h :setlocal hlsearch!<cr>
 " }}}
 
 
 " Filetype {{{
 augroup filetype
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker list
+    autocmd FileType vim setlocal autoindent foldmethod=marker list
     autocmd BufNewFile, BufRead *.html setlocal nowrap
     autocmd BufNewFile, BufRead *.html gg=G
     autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
@@ -175,4 +180,51 @@ function! MyTabLabel(n)
     return buflist[winnr - 1] . ') ' . bufname(buflist[winnr - 1])
 endfunction
 
+function! Sorted(l)
+    let new_list = deepcopy(a:l)
+    call sort(new_list)
+    return new_list
+endfunction
+
+function! Reversed(l)
+    let new_list = deepcopy(a:l)
+    call reverse(new_list)
+    return new_list
+endfunction
+
+function! Append(l, val)
+    let new_list = deepcopy(a:l)
+    call add(new_list, a:val)
+    return new_list
+endfunction
+
+function! Assoc(l, i, val)
+    let new_list = deepcopy(a:l)
+    let new_list[a:i] = a:val
+    return new_list
+endfunction
+
+function! Pop(l, i)
+    let new_list = deepcopy(a:l)
+    call remove(new_list, a:i)
+    return new_list
+endfunction
+
+function! Mapped(fn, l)
+    let new_list = deepcopy(a:l)
+    call map(new_list, string(a:fn) . '(v:val)')
+    return new_list
+endfunction
+
+function! Filtered(fn, l)
+    let new_list = deepcopy(a:l)
+    call filter(new_list, string(a:fn) . '(v:val)')
+    return new_list
+endfunction
+
+function! Removed(fn, l)
+    let new_list = deepcopy(a:l)
+    call filter(new_list, '!' . string(a:fn) . '(v:val)')
+    return new_list
+endfunction
 " }}}

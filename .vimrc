@@ -8,6 +8,7 @@ set softtabstop=4
 set shiftwidth=4
 set rnu
 set expandtab
+set encoding=utf-8
 inoremap jk <esc>
 inoremap <esc> <nop>
 let g:quickfix_is_open = 0

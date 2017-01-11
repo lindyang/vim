@@ -27,7 +27,8 @@ iabbrev teh the
 
 
 " Alt {{{
-if has('macunix')
+let os = substitute(system('uname'), '\n', '', '')
+if os ==# 'Darwin' || os ==# 'Mac'
     " alt q
     nnoremap œ :quit!<cr>
     " alt w
@@ -44,13 +45,13 @@ if has('macunix')
     inoremap £ :tabnext 3<cr>
     inoremap ¢ :tabnext 4<cr>
     inoremap ∞ :tabnext 5<cr>
-    
+
     nnoremap ¡ :tabnext 1<cr>
     nnoremap ™ :tabnext 2<cr>
     nnoremap £ :tabnext 3<cr>
     nnoremap ¢ :tabnext 4<cr>
     nnoremap ∞ :tabnext 5<cr>
-elseif has('unix')
+elseif os ==# 'Linux'
     nnoremap q :quit!<cr>
     inoremap w <esc>:write<cr>:quit<cr>
     inoremap s <esc>:write<cr>a
@@ -80,12 +81,21 @@ nnoremap <leader>q :call QuickfixToggle()<cr>
 " }}}
 
 
+" autocmd-events {{{
+augroup events
+    autocmd!
+    autocmd BufNewFile, BufRead * match Error / \+$/
+    autocmd BufWritePre * silent! %s/\ \+$//
+    autocmd BufNewFile, BufRead *.html setlocal nowrap
+    autocmd BufNewFile, BufRead *.html gg=G
+augroup END
+" }}}
+
+
 " Filetype {{{
 augroup filetype
     autocmd!
     autocmd FileType vim setlocal autoindent foldmethod=marker list
-    autocmd BufNewFile, BufRead *.html setlocal nowrap
-    autocmd BufNewFile, BufRead *.html gg=G
     autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
     autocmd FileType *.c nnoremap <buffer> <localleader>c I//<esc>``i
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>

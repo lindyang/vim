@@ -1,0 +1,12 @@
+]p  " Paste text, aligning indentation with surroundings
+==  " auto-indent the current line
+=2a{  " Re-indent '2 blocks', i.e. this block and containing block
+gg=G
+:argdo normal gg=G
+:bufdo normal gg=G:wall
+0 CTRL-d
+:4,8>
+Instend of "{", you can use "}" or "B".
+v4>
+V4>
+

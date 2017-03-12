@@ -28,7 +28,7 @@ iabbrev teh the
 
 " Alt {{{
 let os = substitute(system('uname'), '\n', '', '')
-if os ==# 'Darwin' || os ==# 'Mac'
+" if os ==# 'Darwin' || os ==# 'Mac'
     " alt q
     nnoremap œ :quit!<cr>
     " alt w
@@ -51,7 +51,7 @@ if os ==# 'Darwin' || os ==# 'Mac'
     nnoremap £ :tabnext 3<cr>
     nnoremap ¢ :tabnext 4<cr>
     nnoremap ∞ :tabnext 5<cr>
-elseif os ==# 'Linux'
+" elseif os ==# 'Linux'
     nnoremap q :quit!<cr>
     inoremap w <esc>:write<cr>:quit<cr>
     inoremap s <esc>:write<cr>a
@@ -67,7 +67,7 @@ elseif os ==# 'Linux'
     inoremap 3 <esc>:tabnext 3<cr>
     inoremap 4 <esc>:tabnext 4<cr>
     inoremap 5 <esc>:tabnext 5<cr>
-endif
+" endif
 " }}}
 
 
